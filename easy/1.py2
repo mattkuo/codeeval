@@ -1,0 +1,27 @@
+# FIZZ BUZZ
+
+import sys
+
+input = sys.argv[1]
+
+f = open(input)
+
+for row in f:
+    line_input = row.split(" ")
+    a = int(line_input[0])
+    b = int(line_input[1])
+    n = int(line_input[2])
+
+    output = []
+    for num in xrange(1, n+1):
+        if num % a == 0 and num % b == 0:
+            output.append("FB")
+        elif num % a == 0:
+            output.append("F")
+        elif num % b == 0:
+            output.append("B")
+        else:
+            output.append(str(num))
+
+    result = " ".join(output)
+    print result

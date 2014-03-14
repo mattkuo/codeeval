@@ -1,0 +1,21 @@
+import sys
+import operator
+
+f = open(sys.argv[1])
+
+for sentence in f:
+    sen = sentence.lower()
+    char_count = {}
+
+    for c in sen:
+        if c.isalpha():
+            char_count[c] = char_count.get(c, 0) + 1
+
+    max_sentence_score = 0
+    score_count = 26
+
+    for char, count in sorted(char_count.iteritems(), key=operator.itemgetter(1), reverse=True):
+        max_sentence_score += count * score_count
+        score_count -= 1
+
+    print max_sentence_score
