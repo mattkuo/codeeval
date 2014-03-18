@@ -3,7 +3,7 @@
 File.foreach(ARGV[0]) do |line|
   num = line.to_i
   coins = 0
-  
+
   if num / 5 > 0
     coins += num / 5
     num = num % 5
@@ -15,7 +15,5 @@ File.foreach(ARGV[0]) do |line|
   end
 
   coins += num
-  
   puts coins
 end
-
